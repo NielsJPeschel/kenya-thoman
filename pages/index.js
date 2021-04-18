@@ -1,10 +1,14 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+
+import { Landing } from '../components/landing'
+
+
+const Home = () => {
   return (
-    <div>
-      Under construction
-    </div>
-  )
+    <Landing />
+  );
 }
+
+
+export default Home;
+
