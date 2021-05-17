@@ -32,7 +32,6 @@ export const Landing = () => {
     );
 }
 
-
 const Container = styled.div`
   position: relative;
   display: block;
@@ -64,6 +63,15 @@ const Content = styled.div`
   left: 10vw;
   width: 80vw;
   height: 80vh;
+
+  @media only screen and (max-width: 600px) {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  
 `;
 
 
@@ -88,6 +96,34 @@ const LogoContainer = styled.div`
     text-transform: lowercase;
     letter-spacing: 0.7rem;
     line-height: 2rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+
+    svg {
+      width: 60vw;
+      margin-bottom: 10px;
+
+    }
+
+    h3 {
+      line-height: 0.7rem;
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+
+    }
+    h4 {
+      line-height: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.4rem;
+      white-space: nowrap;
+
+    }
   }
 `;
 
@@ -127,6 +163,10 @@ const Tagline = styled.div`
   }
   span {
     color: #E29700;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
 
 `;
