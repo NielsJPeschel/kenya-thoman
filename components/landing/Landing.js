@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import Logo from '../../public/logocolor.svg'
+import Logo from '../../public/logocolor.svg';
+import {Nav} from '../nav';
 
 export const Landing = () => {
     return (
@@ -17,11 +18,9 @@ export const Landing = () => {
                     <h3>Kenya Thoman</h3>
                     <h4>freelance drone pilot</h4>
                 </LogoContainer>
-                <NavUl>
-                    <li>about</li>
-                    <li>pricing</li>
-                    <li>contact</li>
-                </NavUl>
+                <NavWrapper>
+                  <Nav />
+                </NavWrapper>
                 <Tagline>
                     <h2>Your favorite views</h2>
                     <h1>From a <span>new</span><br />perspective</h1>
@@ -35,25 +34,30 @@ export const Landing = () => {
 const Container = styled.div`
   position: relative;
   display: block;
-  width: 100 vw;
+  width: 100vw;
   height: 100vh;
 
   video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
+
+  @media only screen and (max-width: 900px) {
+    height: 70vh;
+  }
+
 `
 
 const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.8);
 `;
 
@@ -64,11 +68,11 @@ const Content = styled.div`
   width: 80vw;
   height: 80vh;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
 
   
@@ -98,7 +102,7 @@ const LogoContainer = styled.div`
     line-height: 2rem;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -127,20 +131,16 @@ const LogoContainer = styled.div`
   }
 `;
 
-const NavUl = styled.ul`
+const NavWrapper = styled.div`
   position: absolute; 
   right: 0;
   top: 0;
-  list-style: none;
+  
+  @media only screen and (max-width: 900px) {
 
-  li {
-    display: inline;
-    color: white;
-    padding: 0 40px;
-
-    :hover {
-      border-bottom: 1px solid white;
-    }
+    text-align: center;
+    top: 15px;
+    left: 0;
   }
 `;
 
@@ -165,7 +165,7 @@ const Tagline = styled.div`
     color: #E29700;
   }
   
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     display: none;
   }
 
